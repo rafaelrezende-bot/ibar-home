@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo IBAR — Refratários, Minerais Industriais e Soluções Técnicas</title>
+  <meta name="description" content="O Grupo IBAR reúne seis empresas especializadas com mais de 50 anos de atuação em refratários, minerais industriais e soluções técnicas para siderurgia, cimento, petroquímica e agronegócio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --darkest: #181212;
+      --dark: #514C4C;
+      --medium: #969393;
+      --light: #D8D8D8;
+      --lightest: #F6F5F5;
+      --white: #FFFFFF;
+      --red: #CD1F1F;
+      --max-width: 1296px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--darkest);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+
+    /* ========== 1. HEADER ========== */
+    .header {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: calc(100% - 48px);
+      max-width: 1296px;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 8px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header.header--hidden {
+      transform: translateX(-50%) translateY(-120%);
+      opacity: 0;
+    }
+
+    .header__logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header__nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .header__nav a:hover {
+      opacity: 0.75;
+    }
+
+    .header__icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header__icons button {
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header__icons svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .header__menu-toggle {
+      display: none;
+      color: var(--white);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header__menu-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .mobile-nav__close {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      color: var(--white);
+      font-size: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ========== 2. HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      border-radius: 0 0 16px 16px;
+      overflow: hidden;
+      background: var(--darkest);
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600');
+      background-size: cover;
+      background-position: center;
+      background-color: var(--darkest);
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(24,18,18,0.5) 0%, rgba(24,18,18,0.85) 100%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 0 auto;
+      padding: 64px;
+      padding-top: 120px;
+    }
+
+    .hero__title {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+
+    .hero__subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--light);
+      line-height: 1.5;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .hero__ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--darkest);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 8px;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.9; }
+
+    .btn-secondary {
+      border: 1px solid var(--white);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--darkest);
+    }
+
+    /* ========== 3. NOSSAS EMPRESAS ========== */
+    .empresas {
+      background: var(--lightest);
+      padding: 64px 0;
+    }
+
+    .empresas__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--darkest);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .empresas__carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 24px;
+    }
+
+    .empresa-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .empresa-card--side {
+      width: 330px;
+      height: 420px;
+      opacity: 0.8;
+    }
+
+    .empresa-card--center {
+      width: 400px;
+      height: 500px;
+      opacity: 1;
+    }
+
+    .empresa-card__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .empresa-card:nth-child(1) .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600');
+      background-color: #2a2a2a;
+    }
+
+    .empresa-card:nth-child(2) .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600');
+      background-color: #333;
+    }
+
+    .empresa-card:nth-child(3) .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600');
+      background-color: #2e2e2e;
+    }
+
+    .empresa-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 100%);
+    }
+
+    .empresa-card__content {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .empresa-card__name {
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .empresa-card--side .empresa-card__name { font-size: 24px; }
+    .empresa-card--center .empresa-card__name { font-size: 32px; }
+
+    .empresa-card__cta {
+      background: rgba(115, 110, 105, 0.6);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      border-radius: 20px;
+      padding: 10px 20px;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .empresa-card__cta:hover {
+      background: rgba(115, 110, 105, 0.85);
+    }
+
+    .empresas__nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .dot {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--light);
+      transition: all 0.3s;
+    }
+
+    .dot--active {
+      width: 24px;
+      background: var(--darkest);
+    }
+
+    .dot--inactive {
+      width: 8px;
+    }
+
+    .empresas__pause {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-left: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .empresas__pause:hover {
+      background: rgba(0,0,0,0.05);
+    }
+
+    /* ========== 4. INDUSTRIAS ========== */
+    .industrias {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .industrias__header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .industrias__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--darkest);
+      margin-bottom: 12px;
+    }
+
+    .industrias__subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.5;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .industrias__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .chip {
+      background: var(--lightest);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .chip:hover, .chip--active {
+      background: var(--darkest);
+      color: var(--white);
+    }
+
+    .industrias__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .industria-card {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .industria-card__img {
+      width: 100%;
+      height: 180px;
+      background: #D9D9D9;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .industria-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .industria-card__name {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--darkest);
+      margin-bottom: 8px;
+    }
+
+    .industria-card__desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .industria-card__tags {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--medium);
+      margin-bottom: 12px;
+    }
+
+    .industria-card__link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--darkest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    .industria-card__link:hover { opacity: 0.7; }
+
+    /* ========== 5. CADEIA PRODUTIVA ========== */
+    .cadeia {
+      background: var(--darkest);
+      padding: 80px 0;
+    }
+
+    .cadeia__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 48px;
+      line-height: 1.3;
+    }
+
+    .cadeia__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .cadeia-card {
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cadeia-card__img {
+      height: 180px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cadeia-card__img svg {
+      width: 48px;
+      height: 48px;
+      color: var(--medium);
+    }
+
+    .cadeia-card__content {
+      background: var(--medium);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .cadeia-card__name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .cadeia-card__desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 21px;
+    }
+
+    .cadeia-card__cta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red);
+      transition: opacity 0.2s;
+    }
+
+    .cadeia-card__cta:hover { opacity: 0.7; }
+
+    .cadeia-card__divider {
+      width: 100%;
+      height: 1px;
+      background: var(--white);
+    }
+
+    .cadeia-card__empresa {
+      font-size: 11px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    /* ========== 6. NUMEROS ========== */
+    .numeros {
+      background: var(--darkest);
+      padding: 80px 0;
+      border-top: 1px solid var(--dark);
+    }
+
+    .numeros__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 48px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .numeros__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .numero-item {
+      text-align: center;
+    }
+
+    .numero-item__value {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .numero-item__desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--light);
+      line-height: 22px;
+    }
+
+    /* ========== 7. DEPOIMENTOS ========== */
+    .depoimentos {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .depoimentos__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--darkest);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .depoimentos__track-wrapper {
+      overflow: hidden;
+      padding: 0 64px;
+    }
+
+    .depoimentos__track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+
+    .depoimentos__track::-webkit-scrollbar { display: none; }
+
+    .depoimento-card {
+      min-width: 380px;
+      max-width: 380px;
+      background: var(--lightest);
+      border-radius: 16px;
+      padding: 32px 24px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .depoimento-card__quote-icon {
+      font-size: 32px;
+      color: var(--light);
+      line-height: 1;
+    }
+
+    .depoimento-card__text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .depoimento-card__author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--darkest);
+    }
+
+    .depoimento-card__role {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--medium);
+      margin-top: 2px;
+    }
+
+    .depoimentos__nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    /* ========== 8. FAQ ========== */
+    .faq {
+      background: var(--lightest);
+      padding: 80px 0;
+    }
+
+    .faq__inner {
+      max-width: 896px;
+      margin: 0 auto;
+      padding: 0 64px;
+    }
+
+    .faq__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--darkest);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .faq__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-item__header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 20px;
+      cursor: pointer;
+      gap: 16px;
+      background: none;
+      border: none;
+      text-align: left;
+    }
+
+    .faq-item__question {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--darkest);
+      flex: 1;
+    }
+
+    .faq-item__icon {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--dark);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      line-height: 1;
+      width: 24px;
+      text-align: center;
+    }
+
+    .faq-item.active .faq-item__icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-item__answer {
+      max-height: 200px;
+    }
+
+    .faq-item__answer-inner {
+      padding: 0 20px 24px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ========== 9. CTA CONTATO ========== */
+    .cta-contato {
+      background: var(--darkest);
+      padding: 80px 0;
+    }
+
+    .cta-contato__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 64px;
+    }
+
+    .cta-contato__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .cta-contato__subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--light);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .cta-contato .btn-primary {
+      display: inline-block;
+    }
+
+    /* ========== 10. FOOTER ========== */
+    .footer {
+      background: var(--darkest);
+      border-top: 1px solid var(--dark);
+      padding: 64px;
+    }
+
+    .footer__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer__logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer__address {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--medium);
+      line-height: 1.5;
+    }
+
+    .footer__col-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer__links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--medium);
+      transition: color 0.2s;
+    }
+
+    .footer__links a:hover { color: var(--light); }
+
+    .footer__bottom {
+      max-width: var(--max-width);
+      margin: 32px auto 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer__copyright {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--medium);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer__legal a {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--medium);
+      transition: color 0.2s;
+    }
+
+    .footer__legal a:hover { color: var(--light); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .container { padding-left: 32px; padding-right: 32px; }
+      .hero__content { padding: 48px 32px; padding-top: 120px; }
+
+      .empresa-card--side { width: 260px; height: 360px; }
+      .empresa-card--center { width: 320px; height: 420px; }
+      .empresa-card--center .empresa-card__name { font-size: 26px; }
+
+      .industrias__grid { grid-template-columns: repeat(2, 1fr); }
+      .cadeia__grid { grid-template-columns: repeat(2, 1fr); }
+      .numeros__grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+      .footer__grid { grid-template-columns: repeat(2, 1fr); }
+      .footer { padding: 48px 32px; }
+
+      .depoimentos__track-wrapper { padding: 0 32px; }
+      .depoimento-card { min-width: 320px; max-width: 320px; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding-left: 20px; padding-right: 20px; }
+
+      .header__nav, .header__icons { display: none; }
+      .header__menu-toggle { display: block; }
+      .header { padding: 14px 20px; }
+
+      .hero { min-height: 500px; }
+      .hero__content { padding: 32px 20px; padding-top: 100px; }
+      .hero__title { font-size: 28px; }
+      .hero__subtitle { font-size: 14px; }
+      .hero__ctas { flex-direction: column; }
+      .hero__ctas a { text-align: center; }
+
+      .empresas { padding: 48px 0; }
+      .empresas__title { font-size: 22px; padding: 0 20px; }
+      .empresas__carousel { flex-direction: column; gap: 12px; align-items: center; }
+      .empresa-card--side, .empresa-card--center {
+        width: 90%;
+        max-width: 360px;
+        height: 300px;
+        opacity: 1;
+      }
+      .empresa-card--center .empresa-card__name, .empresa-card--side .empresa-card__name { font-size: 22px; }
+
+      .industrias { padding: 48px 0; }
+      .industrias__title { font-size: 22px; }
+      .industrias__grid { grid-template-columns: 1fr; }
+      .industrias__chips { padding: 0 20px; }
+
+      .cadeia { padding: 48px 0; }
+      .cadeia__title { font-size: 22px; padding: 0 20px; }
+      .cadeia__grid { grid-template-columns: 1fr; }
+
+      .numeros { padding: 48px 0; }
+      .numeros__title { font-size: 22px; padding: 0 20px; }
+      .numeros__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .numero-item__value { font-size: 40px; }
+
+      .depoimentos { padding: 48px 0; }
+      .depoimentos__title { font-size: 22px; padding: 0 20px; }
+      .depoimentos__track-wrapper { padding: 0 20px; }
+      .depoimento-card { min-width: 280px; max-width: 280px; padding: 24px 20px; }
+
+      .faq { padding: 48px 0; }
+      .faq__inner { padding: 0 20px; }
+      .faq__title { font-size: 22px; }
+
+      .cta-contato { padding: 48px 0; }
+      .cta-contato__inner { padding: 0 20px; }
+      .cta-contato__title { font-size: 26px; }
+      .cta-contato__subtitle { font-size: 16px; }
+
+      .footer { padding: 32px 20px; }
+      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .footer__bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== 1. HEADER ========== -->
+  <header class="header" id="header">
+    <a href="#" class="header__logo">IBAR</a>
+    <nav class="header__nav">
+      <a href="#sobre">Sobre o Grupo</a>
+      <a href="#empresas">Nossas empresas &#9662;</a>
+      <a href="#industrias">Indústrias &#9662;</a>
+      <a href="#cadeia">Produtos e Serviços &#9662;</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header__icons">
+      <button aria-label="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button aria-label="Idioma">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+      </button>
+    </div>
+    <button class="header__menu-toggle" onclick="document.getElementById('mobileNav').classList.add('active')" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" onclick="document.getElementById('mobileNav').classList.remove('active')" aria-label="Fechar">&times;</button>
+    <a href="#sobre" onclick="document.getElementById('mobileNav').classList.remove('active')">Sobre o Grupo</a>
+    <a href="#empresas" onclick="document.getElementById('mobileNav').classList.remove('active')">Nossas empresas</a>
+    <a href="#industrias" onclick="document.getElementById('mobileNav').classList.remove('active')">Indústrias</a>
+    <a href="#cadeia" onclick="document.getElementById('mobileNav').classList.remove('active')">Produtos e Serviços</a>
+    <a href="#contato" onclick="document.getElementById('mobileNav').classList.remove('active')">Contato</a>
+  </div>
+
+  <!-- ========== 2. HERO ========== -->
+  <section class="hero" id="sobre">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">Refratários, minerais industriais e soluções técnicas para siderurgia, cimento, petroquímica e agronegócio</h1>
+      <p class="hero__subtitle">O Grupo IBAR reúne seis empresas especializadas com mais de 50 anos de atuação, atendendo as maiores indústrias do Brasil e da América Latina.</p>
+      <div class="hero__ctas">
+        <a href="#cadeia" class="btn-primary">Conheça nossas soluções</a>
+        <a href="#contato" class="btn-secondary">Fale com um especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. NOSSAS EMPRESAS ========== -->
+  <section class="empresas" id="empresas">
+    <h2 class="empresas__title">Seis empresas especializadas, um grupo integrado</h2>
+    <div class="empresas__carousel">
+      <div class="empresa-card empresa-card--side">
+        <div class="empresa-card__bg"></div>
+        <div class="empresa-card__overlay"></div>
+        <div class="empresa-card__content">
+          <span class="empresa-card__name">Global Service</span>
+          <a href="#" class="empresa-card__cta">Conheça</a>
+        </div>
+      </div>
+      <div class="empresa-card empresa-card--center">
+        <div class="empresa-card__bg"></div>
+        <div class="empresa-card__overlay"></div>
+        <div class="empresa-card__content">
+          <span class="empresa-card__name">Ibar Refratários</span>
+          <a href="#" class="empresa-card__cta">Conheça</a>
+        </div>
+      </div>
+      <div class="empresa-card empresa-card--side">
+        <div class="empresa-card__bg"></div>
+        <div class="empresa-card__overlay"></div>
+        <div class="empresa-card__content">
+          <span class="empresa-card__name">Nutec IBAR</span>
+          <a href="#" class="empresa-card__cta">Conheça</a>
+        </div>
+      </div>
+    </div>
+    <div class="empresas__nav">
+      <span class="dot dot--active"></span>
+      <span class="dot dot--inactive"></span>
+      <span class="dot dot--inactive"></span>
+      <button class="empresas__pause" aria-label="Pausar carousel">&#10074;&#10074;</button>
+    </div>
+  </section>
+
+  <!-- ========== 4. INDUSTRIAS ========== -->
+  <section class="industrias" id="industrias">
+    <div class="container">
+      <div class="industrias__header">
+        <h2 class="industrias__title">Encontre a solução ideal para sua indústria</h2>
+        <p class="industrias__subtitle">Cada setor industrial tem desafios únicos. Conheça como o Grupo IBAR atende as necessidades específicas da sua operação.</p>
+      </div>
+      <div class="industrias__chips">
+        <button class="chip chip--active">Todos</button>
+        <button class="chip">Siderurgia</button>
+        <button class="chip">Cimento</button>
+        <button class="chip">Petroquímica</button>
+        <button class="chip">Agronegócio</button>
+        <button class="chip">Construção Civil</button>
+        <button class="chip">Vidro</button>
+        <button class="chip">Cerâmica</button>
+      </div>
+      <div class="industrias__grid">
+        <!-- Siderurgia -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600" alt="Siderurgia" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Siderurgia</h3>
+          <p class="industria-card__desc">Revestimento refratário para altos-fornos, convertedores e panelas de aço. Mais de 30 anos fornecendo para as principais usinas do Brasil.</p>
+          <p class="industria-card__tags">Refratários moldados, monolíticos, fibras cerâmicas</p>
+          <a href="#" class="industria-card__link">Soluções para Siderurgia &rarr;</a>
+        </div>
+        <!-- Cimento -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=600" alt="Cimento" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Cimento</h3>
+          <p class="industria-card__desc">Refratários para fornos rotativos, pré-aquecedores e resfriadores de clínquer. Soluções completas para a indústria cimenteira.</p>
+          <p class="industria-card__tags">Tijolos refratários, concretos, argamassas</p>
+          <a href="#" class="industria-card__link">Soluções para Cimento &rarr;</a>
+        </div>
+        <!-- Petroquímica -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600" alt="Petroquímica" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Petroquímica</h3>
+          <p class="industria-card__desc">Revestimentos para reatores, torres de FCC e unidades de processo. Resistência a altas temperaturas e ambientes corrosivos.</p>
+          <p class="industria-card__tags">Refratários especiais, isolantes, ancoragens</p>
+          <a href="#" class="industria-card__link">Soluções para Petroquímica &rarr;</a>
+        </div>
+        <!-- Agronegócio -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600" alt="Agronegócio" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Agronegócio</h3>
+          <p class="industria-card__desc">Soluções térmicas para secadores de grãos, fornalhas e caldeiras. Eficiência energética para o agronegócio brasileiro.</p>
+          <p class="industria-card__tags">Fibra cerâmica, lã de rocha, refratários leves</p>
+          <a href="#" class="industria-card__link">Soluções para Agronegócio &rarr;</a>
+        </div>
+        <!-- Construção Civil -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" alt="Construção Civil" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Construção Civil</h3>
+          <p class="industria-card__desc">Isolamento térmico e acústico para edificações industriais e comerciais. Conforto e eficiência energética.</p>
+          <p class="industria-card__tags">Lã de rocha, painéis isolantes, mantas</p>
+          <a href="#" class="industria-card__link">Soluções para Construção Civil &rarr;</a>
+        </div>
+        <!-- Vidro e Cerâmica -->
+        <div class="industria-card">
+          <div class="industria-card__img">
+            <img src="https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?w=600" alt="Vidro e Cerâmica" loading="lazy">
+          </div>
+          <h3 class="industria-card__name">Vidro e Cerâmica</h3>
+          <p class="industria-card__desc">Refratários para fornos de fusão de vidro e queima cerâmica. Alta pureza e resistência à corrosão.</p>
+          <p class="industria-card__tags">Refratários eletrofundidos, moldados, especiais</p>
+          <a href="#" class="industria-card__link">Soluções para Vidro e Cerâmica &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. CADEIA PRODUTIVA ========== -->
+  <section class="cadeia" id="cadeia">
+    <div class="container">
+      <h2 class="cadeia__title">Da jazida ao forno.<br>Soluções para toda a cadeia refratária.</h2>
+      <div class="cadeia__grid">
+        <!-- 1 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18m-6-6 6 6 6-6M3 9h18"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Mineração</span>
+            <p class="cadeia-card__desc">43 jazidas próprias para extração de MgO, argilas, sílica e quartzo.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Nordeste</span>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 21a8.966 8.966 0 0 0 5.982-2.275M12 21a8.966 8.966 0 0 1-5.982-2.275"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Matérias-Primas</span>
+            <p class="cadeia-card__desc">Beneficiamento e preparação de matérias-primas para a indústria refratária.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Nordeste</span>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Refratários Moldados</span>
+            <p class="cadeia-card__desc">Tijolos e peças refratárias prensadas para revestimento de equipamentos industriais.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Refratários</span>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48z"/><path d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18z"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Refratários Monolíticos</span>
+            <p class="cadeia-card__desc">Concretos, argamassas e massas refratárias para aplicação in loco.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Refratários</span>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Fibras Cerâmicas</span>
+            <p class="cadeia-card__desc">Mantas, módulos e peças de fibra cerâmica para isolamento em altas temperaturas.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por Nutec IBAR</span>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0z"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Isolantes Térmicos</span>
+            <p class="cadeia-card__desc">Lã de rocha e soluções de isolamento térmico e acústico industrial.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por Nutec IBAR</span>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.048.58.024 1.194-.14 1.743"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Serviços Técnicos</span>
+            <p class="cadeia-card__desc">Instalação, manutenção e engenharia de aplicação refratária.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por Global Service</span>
+          </div>
+        </div>
+        <!-- 8 -->
+        <div class="cadeia-card">
+          <div class="cadeia-card__img">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25z"/></svg>
+          </div>
+          <div class="cadeia-card__content">
+            <span class="cadeia-card__name">Soluções Integradas</span>
+            <p class="cadeia-card__desc">Gestão completa de refratários: do projeto à operação assistida.</p>
+            <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
+            <div class="cadeia-card__divider"></div>
+            <span class="cadeia-card__empresa">Fornecido por Grupo IBAR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. NUMEROS ========== -->
+  <section class="numeros">
+    <div class="container">
+      <h2 class="numeros__title">Mais de 50 anos de expertise em refratários e minerais industriais</h2>
+      <div class="numeros__grid">
+        <div class="numero-item">
+          <div class="numero-item__value">+50</div>
+          <p class="numero-item__desc">Anos de experiência no mercado de refratários e minerais industriais</p>
+        </div>
+        <div class="numero-item">
+          <div class="numero-item__value">+1.000</div>
+          <p class="numero-item__desc">Colaboradores em unidades no Brasil e América Latina</p>
+        </div>
+        <div class="numero-item">
+          <div class="numero-item__value">+20.000</div>
+          <p class="numero-item__desc">Clientes atendidos em diversos setores industriais</p>
+        </div>
+        <div class="numero-item">
+          <div class="numero-item__value">6</div>
+          <p class="numero-item__desc">Empresas especializadas sob um grupo integrado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. DEPOIMENTOS ========== -->
+  <section class="depoimentos">
+    <div class="container">
+      <h2 class="depoimentos__title">O que nossos clientes dizem sobre o Grupo IBAR</h2>
+    </div>
+    <div class="depoimentos__track-wrapper">
+      <div class="depoimentos__track">
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">A parceria com o Grupo IBAR transformou nossa operação. A qualidade dos refratários e o suporte técnico são excepcionais.</p>
+          <div>
+            <div class="depoimento-card__author">Carlos Mendes</div>
+            <div class="depoimento-card__role">Diretor Industrial — Usiminas</div>
+          </div>
+        </div>
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">Há 15 anos contamos com a IBAR para nossos fornos rotativos. A confiabilidade dos produtos é incomparável no mercado.</p>
+          <div>
+            <div class="depoimento-card__author">Ana Rodrigues</div>
+            <div class="depoimento-card__role">Gerente de Manutenção — Votorantim Cimentos</div>
+          </div>
+        </div>
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">O serviço de instalação da Global Service reduziu nosso tempo de parada em 40%. Profissionalismo de alto nível.</p>
+          <div>
+            <div class="depoimento-card__author">Roberto Takahashi</div>
+            <div class="depoimento-card__role">Coordenador de Produção — Braskem</div>
+          </div>
+        </div>
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">A Nutec IBAR nos fornece fibras cerâmicas de qualidade superior. O isolamento térmico melhorou nossa eficiência energética em 25%.</p>
+          <div>
+            <div class="depoimento-card__author">Maria Santos</div>
+            <div class="depoimento-card__role">Engenheira de Processos — Cargill</div>
+          </div>
+        </div>
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">O modelo de gestão integrada de refratários da IBAR nos permitiu focar no core business. Recomendo fortemente.</p>
+          <div>
+            <div class="depoimento-card__author">Fernando Lima</div>
+            <div class="depoimento-card__role">Diretor de Operações — ArcelorMittal</div>
+          </div>
+        </div>
+        <div class="depoimento-card">
+          <div class="depoimento-card__quote-icon">&ldquo;</div>
+          <p class="depoimento-card__text">Desde que adotamos as soluções da IBAR, reduzimos custos com refratários em 30% sem perder qualidade.</p>
+          <div>
+            <div class="depoimento-card__author">Patricia Oliveira</div>
+            <div class="depoimento-card__role">Gerente de Suprimentos — CSN</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="depoimentos__nav">
+      <span class="dot dot--active"></span>
+      <span class="dot dot--inactive"></span>
+      <span class="dot dot--inactive"></span>
+      <span class="dot dot--inactive"></span>
+    </div>
+  </section>
+
+  <!-- ========== 8. FAQ ========== -->
+  <section class="faq">
+    <div class="faq__inner">
+      <h2 class="faq__title">Perguntas frequentes sobre refratários, minerais industriais e o Grupo IBAR</h2>
+      <div class="faq__list">
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">O que são refratários e para que servem?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">Refratários são materiais cerâmicos projetados para resistir a temperaturas extremamente altas, além de desgaste mecânico e ataque químico. São essenciais em fornos industriais, caldeiras e equipamentos de siderurgia, cimento, petroquímica e outras indústrias de alta temperatura.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">Qual a diferença entre refratários moldados e monolíticos?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">Refratários moldados são peças pré-formadas (tijolos, blocos) fabricadas em fábrica e instaladas peça a peça. Monolíticos são materiais sem forma definida (concretos, massas, argamassas) aplicados in loco, permitindo revestimentos contínuos sem juntas.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">Quem fornece lã de rocha para isolamento térmico industrial?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">A Nutec IBAR e a Biolã, empresas do Grupo IBAR, são referência no fornecimento de lã de rocha para isolamento térmico e acústico industrial, atendendo setores como construção civil, petroquímica e siderurgia.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">O que é fibra cerâmica e onde se aplica?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">Fibra cerâmica é um material isolante de alta performance, disponível em mantas, módulos e peças moldadas. É amplamente utilizada em fornos industriais, dutos de exaustão e equipamentos que operam em temperaturas de até 1.600°C.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">O Grupo IBAR atende quais indústrias?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">O Grupo IBAR atende siderurgia, cimento, petroquímica, agronegócio, construção civil, vidro e cerâmica, entre outros setores que demandam soluções em refratários, isolamento térmico e minerais industriais.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">Como escolher o refratário certo para minha operação?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">A escolha depende de fatores como temperatura de operação, tipo de atmosfera, agentes químicos presentes e solicitações mecânicas. O Grupo IBAR oferece suporte técnico especializado para dimensionar a melhor solução para cada aplicação.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">Quais certificações de qualidade o Grupo IBAR possui?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">As empresas do Grupo IBAR possuem certificações ISO 9001, ISO 14001 e OHSAS 18001, além de atender normas técnicas específicas da ABNT e padrões internacionais de qualidade para refratários.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="faq-item__question">O que é o serviço de instalação e manutenção refratária?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">A Global Service, empresa do Grupo IBAR, oferece serviços completos de instalação, manutenção preventiva e corretiva de revestimentos refratários, incluindo engenharia de aplicação e gestão de paradas programadas.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. CTA CONTATO ========== -->
+  <section class="cta-contato" id="contato">
+    <div class="cta-contato__inner">
+      <h2 class="cta-contato__title">Fale com um especialista do Grupo IBAR</h2>
+      <p class="cta-contato__subtitle">Atendimento técnico especializado para siderurgia, cimento, petroquímica e agronegócio.</p>
+      <a href="#" class="btn-primary">Enviar solicitação</a>
+    </div>
+  </section>
+
+  <!-- ========== 10. FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">IBAR</div>
+        <p class="footer__address">Rua Example, 123 - São Paulo, SP<br>CEP 01234-567 - Brasil</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Grupo IBAR</div>
+        <nav class="footer__links">
+          <a href="#">Sobre o Grupo</a>
+          <a href="#">Nossa História</a>
+          <a href="#">Governança</a>
+          <a href="#">Carreiras</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer__col-title">Empresas</div>
+        <nav class="footer__links">
+          <a href="#">IBAR Refratários</a>
+          <a href="#">IBAR Nordeste</a>
+          <a href="#">Nutec IBAR</a>
+          <a href="#">Global Service</a>
+          <a href="#">Biolã</a>
+          <a href="#">IBAR Metálicos</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer__col-title">Produtos e Serviços</div>
+        <nav class="footer__links">
+          <a href="#">Refratários Moldados</a>
+          <a href="#">Monolíticos</a>
+          <a href="#">Fibras Cerâmicas</a>
+          <a href="#">Isolantes</a>
+          <a href="#">Serviços Técnicos</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer__col-title">Indústrias</div>
+        <nav class="footer__links">
+          <a href="#">Siderurgia</a>
+          <a href="#">Cimento</a>
+          <a href="#">Petroquímica</a>
+          <a href="#">Agronegócio</a>
+          <a href="#">Construção Civil</a>
+          <a href="#">Vidro e Cerâmica</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">&copy; 2026 Grupo IBAR. Todos os direitos reservados.</span>
+      <div class="footer__legal">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JS ========== -->
+  <script>
+    // Header hide/show on scroll
+    (function() {
+      let lastScrollY = window.scrollY;
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          header.classList.add('header--hidden');
+        } else {
+          header.classList.remove('header--hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
+
+    // Filter chips
+    (function() {
+      const chips = document.querySelectorAll('.chip');
+      chips.forEach(function(chip) {
+        chip.addEventListener('click', function() {
+          chips.forEach(function(c) { c.classList.remove('chip--active'); });
+          chip.classList.add('chip--active');
+        });
+      });
+    })();
+
+    // Auto-scroll testimonials
+    (function() {
+      const track = document.querySelector('.depoimentos__track');
+      if (!track) return;
+      let scrollAmount = 0;
+      const cardWidth = 404; // 380 + 24 gap
+      let interval;
+
+      function startAutoScroll() {
+        interval = setInterval(function() {
+          scrollAmount += cardWidth;
+          if (scrollAmount >= track.scrollWidth - track.clientWidth) {
+            scrollAmount = 0;
+          }
+          track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }, 4000);
+      }
+
+      startAutoScroll();
+
+      track.addEventListener('mouseenter', function() { clearInterval(interval); });
+      track.addEventListener('mouseleave', function() { startAutoScroll(); });
+    })();
+  </script>
+</body>
+</html>
