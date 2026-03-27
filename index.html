@@ -23,7 +23,7 @@
       --lightest: #F6F5F5;
       --white: #FFFFFF;
       --red: #CD1F1F;
-      --max-width: 1296px;
+      --max-width: 1424px;
     }
 
     html {
@@ -307,18 +307,28 @@
       background-position: center;
     }
 
-    .empresa-card:nth-child(1) .empresa-card__bg {
-      background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600');
-      background-color: #2a2a2a;
-    }
-
-    .empresa-card:nth-child(2) .empresa-card__bg {
+    .empresa-card[data-empresa="0"] .empresa-card__bg {
       background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600');
       background-color: #333;
     }
-
-    .empresa-card:nth-child(3) .empresa-card__bg {
+    .empresa-card[data-empresa="1"] .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600');
+      background-color: #2a2a2a;
+    }
+    .empresa-card[data-empresa="2"] .empresa-card__bg {
       background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600');
+      background-color: #2e2e2e;
+    }
+    .empresa-card[data-empresa="3"] .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600');
+      background-color: #2a2a2a;
+    }
+    .empresa-card[data-empresa="4"] .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600');
+      background-color: #333;
+    }
+    .empresa-card[data-empresa="5"] .empresa-card__bg {
+      background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600');
       background-color: #2e2e2e;
     }
 
@@ -434,7 +444,7 @@
       flex-wrap: wrap;
       gap: 8px;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-top: 40px;
     }
 
     .chip {
@@ -679,7 +689,8 @@
     .depoimento-card {
       min-width: 380px;
       max-width: 380px;
-      background: var(--lightest);
+      background: var(--white);
+      border: 1px solid var(--light);
       border-radius: 16px;
       padding: 32px 24px;
       scroll-snap-align: start;
@@ -687,12 +698,6 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-    }
-
-    .depoimento-card__quote-icon {
-      font-size: 32px;
-      color: var(--light);
-      line-height: 1;
     }
 
     .depoimento-card__text {
@@ -1086,9 +1091,6 @@
       <span class="dot dot--active" data-dot="0"></span>
       <span class="dot dot--inactive" data-dot="1"></span>
       <span class="dot dot--inactive" data-dot="2"></span>
-      <span class="dot dot--inactive" data-dot="3"></span>
-      <span class="dot dot--inactive" data-dot="4"></span>
-      <span class="dot dot--inactive" data-dot="5"></span>
       <button class="empresas__pause" id="empresasPause" aria-label="Pausar carousel">&#10074;&#10074;</button>
     </div>
   </section>
@@ -1099,16 +1101,6 @@
       <div class="industrias__header">
         <h2 class="industrias__title">Encontre a solução ideal para sua indústria</h2>
         <p class="industrias__subtitle">Cada setor industrial tem desafios únicos. Conheça como o Grupo IBAR atende as necessidades específicas da sua operação.</p>
-      </div>
-      <div class="industrias__chips">
-        <button class="chip chip--active">Siderurgia</button>
-        <button class="chip">Cimento</button>
-        <button class="chip">Petroquímica</button>
-        <button class="chip">Agronegócio</button>
-        <button class="chip">Construção Civil</button>
-        <button class="chip">Papel e Celulose</button>
-        <button class="chip">Vidro e Cerâmica</button>
-        <button class="chip">Não-ferrosos</button>
       </div>
       <div class="industrias__grid">
         <!-- Siderurgia -->
@@ -1172,6 +1164,16 @@
           <a href="#" class="industria-card__link">Soluções para Vidro e Cerâmica &rarr;</a>
         </div>
       </div>
+      <div class="industrias__chips">
+        <button class="chip chip--active">Todos</button>
+        <button class="chip">Siderurgia</button>
+        <button class="chip">Cimento</button>
+        <button class="chip">Petroquímica</button>
+        <button class="chip">Agronegócio</button>
+        <button class="chip">Construção Civil</button>
+        <button class="chip">Vidro</button>
+        <button class="chip">Cerâmica</button>
+      </div>
     </div>
   </section>
 
@@ -1199,11 +1201,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48z"/><path d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18z"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Eletrofusão</span>
-            <p class="cadeia-card__desc">Corindon marrom, branco e MgO eletrofundido. 6 fornos com capacidade de 2.400 t/mês.</p>
+            <span class="cadeia-card__name">Matérias-Primas</span>
+            <p class="cadeia-card__desc">Beneficiamento e preparação de matérias-primas para a indústria refratária.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por IBAR</span>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Refratários</span>
           </div>
         </div>
         <!-- 3 -->
@@ -1212,11 +1214,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Refratários conformados</span>
-            <p class="cadeia-card__desc">Queimados e resinados para siderurgia, cimento e vidro.</p>
+            <span class="cadeia-card__name">Refratários Moldados</span>
+            <p class="cadeia-card__desc">Tijolos e peças refratárias prensadas para revestimento de equipamentos industriais.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por IBAR Poá</span>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Refratários</span>
           </div>
         </div>
         <!-- 4 -->
@@ -1225,11 +1227,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 21a8.966 8.966 0 0 0 5.982-2.275M12 21a8.966 8.966 0 0 1-5.982-2.275"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Monolíticos</span>
-            <p class="cadeia-card__desc">Concretos, massas e gunning. 132 mil t/ano de capacidade instalada.</p>
+            <span class="cadeia-card__name">Refratários Monolíticos</span>
+            <p class="cadeia-card__desc">Concretos, argamassas e massas refratárias para aplicação in loco.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por IBAR Poá</span>
+            <span class="cadeia-card__empresa">Fornecido por IBAR Refratários</span>
           </div>
         </div>
         <!-- 5 -->
@@ -1238,8 +1240,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Fibra cerâmica</span>
-            <p class="cadeia-card__desc">Mantas, módulos, placas e peças especiais para isolamento.</p>
+            <span class="cadeia-card__name">Fibras Cerâmicas</span>
+            <p class="cadeia-card__desc">Mantas, módulos e peças de fibra cerâmica para isolamento em altas temperaturas.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
             <span class="cadeia-card__empresa">Fornecido por Nutec IBAR</span>
@@ -1251,11 +1253,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0z"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Lã de rocha</span>
-            <p class="cadeia-card__desc">Painéis, mantas e feltros para isolamento térmico e acústico.</p>
+            <span class="cadeia-card__name">Isolantes Térmicos</span>
+            <p class="cadeia-card__desc">Lã de rocha e soluções de isolamento térmico e acústico industrial.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por Biolã</span>
+            <span class="cadeia-card__empresa">Fornecido por Nutec IBAR</span>
           </div>
         </div>
         <!-- 7 -->
@@ -1264,11 +1266,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.048.58.024 1.194-.14 1.743"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Ancoragem</span>
-            <p class="cadeia-card__desc">Dispositivos em aço carbono, inox e Inconel para revestimentos.</p>
+            <span class="cadeia-card__name">Serviços Técnicos</span>
+            <p class="cadeia-card__desc">Instalação, manutenção e engenharia de aplicação refratária.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por IBAR Metálicos</span>
+            <span class="cadeia-card__empresa">Fornecido por Global Service</span>
           </div>
         </div>
         <!-- 8 -->
@@ -1277,11 +1279,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25z"/></svg>
           </div>
           <div class="cadeia-card__content">
-            <span class="cadeia-card__name">Serviços</span>
-            <p class="cadeia-card__desc">Secagem, aquecimento, refratamento e isolamento em campo.</p>
+            <span class="cadeia-card__name">Soluções Integradas</span>
+            <p class="cadeia-card__desc">Gestão completa de refratários: do projeto à operação assistida.</p>
             <a href="#" class="cadeia-card__cta">Saiba mais &rarr;</a>
             <div class="cadeia-card__divider"></div>
-            <span class="cadeia-card__empresa">Fornecido por GHT Global</span>
+            <span class="cadeia-card__empresa">Fornecido por Grupo IBAR</span>
           </div>
         </div>
       </div>
@@ -1321,7 +1323,7 @@
     <div class="depoimentos__track-wrapper">
       <div class="depoimentos__track">
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">A parceria com o Grupo IBAR transformou nossa operação. A qualidade dos refratários e o suporte técnico são excepcionais.</p>
           <div>
             <div class="depoimento-card__author">Carlos Mendes</div>
@@ -1329,7 +1331,7 @@
           </div>
         </div>
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">Há 15 anos contamos com a IBAR para nossos fornos rotativos. A confiabilidade dos produtos é incomparável no mercado.</p>
           <div>
             <div class="depoimento-card__author">Ana Rodrigues</div>
@@ -1337,7 +1339,7 @@
           </div>
         </div>
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">O serviço de instalação da Global Service reduziu nosso tempo de parada em 40%. Profissionalismo de alto nível.</p>
           <div>
             <div class="depoimento-card__author">Roberto Takahashi</div>
@@ -1345,7 +1347,7 @@
           </div>
         </div>
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">A Nutec IBAR nos fornece fibras cerâmicas de qualidade superior. O isolamento térmico melhorou nossa eficiência energética em 25%.</p>
           <div>
             <div class="depoimento-card__author">Maria Santos</div>
@@ -1353,7 +1355,7 @@
           </div>
         </div>
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">O modelo de gestão integrada de refratários da IBAR nos permitiu focar no core business. Recomendo fortemente.</p>
           <div>
             <div class="depoimento-card__author">Fernando Lima</div>
@@ -1361,7 +1363,7 @@
           </div>
         </div>
         <div class="depoimento-card">
-          <div class="depoimento-card__quote-icon">&ldquo;</div>
+
           <p class="depoimento-card__text">Desde que adotamos as soluções da IBAR, reduzimos custos com refratários em 30% sem perder qualidade.</p>
           <div>
             <div class="depoimento-card__author">Patricia Oliveira</div>
@@ -1554,18 +1556,25 @@
       });
     })();
 
-    // Empresas carousel (6 companies, show 3 at a time)
+    // Empresas carousel (6 companies, 3 pages of 3 visible)
     (function() {
       var empresas = [
-        { name: 'IBAR Refratários', img: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600', bg: '#333' },
-        { name: 'IBAR Nordeste', img: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600', bg: '#2a2a2a' },
-        { name: 'Nutec IBAR', img: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600', bg: '#2e2e2e' },
-        { name: 'Global Service', img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600', bg: '#2c2c2c' },
-        { name: 'Biolã', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600', bg: '#303030' },
-        { name: 'IBAR Metálicos', img: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600', bg: '#2b2b2b' }
+        { name: 'IBAR Refratários', id: 0 },
+        { name: 'IBAR Nordeste', id: 1 },
+        { name: 'Nutec IBAR', id: 2 },
+        { name: 'Global Service', id: 3 },
+        { name: 'Biolã', id: 4 },
+        { name: 'IBAR Metálicos', id: 5 }
       ];
 
-      var currentIndex = 0;
+      // Pages: each shows [left, center, right]
+      var pages = [
+        [5, 0, 1], // page 0: IBAR Metálicos | IBAR Refratários | IBAR Nordeste
+        [1, 2, 3], // page 1: IBAR Nordeste | Nutec IBAR | Global Service
+        [3, 4, 5]  // page 2: Global Service | Biolã | IBAR Metálicos
+      ];
+
+      var currentPage = 0;
       var paused = false;
       var carousel = document.getElementById('empresasCarousel');
       var cards = carousel.querySelectorAll('.empresa-card');
@@ -1573,25 +1582,21 @@
       var pauseBtn = document.getElementById('empresasPause');
 
       function updateCarousel() {
-        var prevIdx = (currentIndex - 1 + empresas.length) % empresas.length;
-        var nextIdx = (currentIndex + 1) % empresas.length;
-        var indices = [prevIdx, currentIndex, nextIdx];
-
+        var page = pages[currentPage];
         cards.forEach(function(card, i) {
-          var e = empresas[indices[i]];
+          var e = empresas[page[i]];
           card.querySelector('.empresa-card__name').textContent = e.name;
-          card.querySelector('.empresa-card__bg').style.backgroundImage = "url('" + e.img + "')";
-          card.querySelector('.empresa-card__bg').style.backgroundColor = e.bg;
+          card.setAttribute('data-empresa', e.id);
         });
 
         dots.forEach(function(dot) {
           var idx = parseInt(dot.getAttribute('data-dot'));
-          dot.className = idx === currentIndex ? 'dot dot--active' : 'dot dot--inactive';
+          dot.className = idx === currentPage ? 'dot dot--active' : 'dot dot--inactive';
         });
       }
 
       function next() {
-        currentIndex = (currentIndex + 1) % empresas.length;
+        currentPage = (currentPage + 1) % pages.length;
         updateCarousel();
       }
 
@@ -1604,7 +1609,7 @@
 
       dots.forEach(function(dot) {
         dot.addEventListener('click', function() {
-          currentIndex = parseInt(dot.getAttribute('data-dot'));
+          currentPage = parseInt(dot.getAttribute('data-dot'));
           updateCarousel();
         });
       });
